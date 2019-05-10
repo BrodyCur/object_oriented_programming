@@ -9,9 +9,27 @@ class Cat:
     def __str__(self):
         return f"{self.name} eats their {self.preferred_food} at {self.meal_time}"
 
+    def eats_at(self):
+        if self.meal_time == 24:
+            self.meal_time -= 12
+            return f"{self.meal_time} AM"
+        elif self.meal_time > 24 or self.meal_time == 0:
+            return "Invalid Number"
+        elif self.meal_time >= 12:
+            self.meal_time -= 12
+            return f"{self.meal_time} PM"
+        elif self.meal_time < 12:
+            return f"{self.meal_time} AM"
+        else:
+            pass
 
-tibby = Cat('Tibby', 'Chicken Pate', 9)
-frank = Cat('Frank', 'Dog Kibble', 20)
 
-print(tibby)
-print(frank)
+    def meow(self):
+        return f"My name is {self.name} and I eat {self.preferred_food} at {self.eats_at()}"
+            
+
+cat1 = Cat('Tibby', 'Chicken Pate', 24)
+cat2 = Cat('Frank', 'Dog Kibble', 13)
+
+print(cat1.meow())
+print(cat2.meow())
