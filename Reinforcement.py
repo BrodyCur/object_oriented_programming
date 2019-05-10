@@ -14,7 +14,7 @@ new_venue_list = []
 
 def find_new_venues(list):
     for dict in list:
-        if dict['wheelchair_accessible'] == True and dict['capacity'] >= 150:
+        if dict['wheelchair_accessible'] == True and dict['capacity'] >= 150 and dict['city'] == 'Toronto':
             new_venue_list.append(dict)
 
 find_new_venues(venues)
