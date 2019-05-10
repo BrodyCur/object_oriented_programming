@@ -23,6 +23,7 @@ class Player:
             self.lives -=1
             self.health_points = 10
         if self.lives == 0:
+            print("You Died!")
             self.restart()
     
     def restart(self):
@@ -48,6 +49,7 @@ hero.collect_treasure()
 hero.do_battle(10)
 hero.do_battle(10)
 hero.do_battle(10)
+print(hero)
 hero.do_battle(10)
 hero.do_battle(10)
 hero.do_battle(10)
